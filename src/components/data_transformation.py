@@ -12,6 +12,8 @@ from sklearn.pipeline import Pipeline
 from src.utils import save_object
 from src.components.data_ingestion import DataIngestion
 from src.components.data_ingestion import DataIngestionConfig
+from src.components.model_trainer import ModelTrainer
+from src.components.model_trainer import ModelTrainerConfig
 
 
 @dataclass
@@ -113,11 +115,15 @@ class DataTransformation:
         
 
 
+
 if __name__=="__main__":
     obj=DataIngestion()
     train_data,test_data=obj.initiate_data_ingestion()
 
     data_transformation=DataTransformation()
-    data_transformation.initiate_data_transformation(train_data,test_data)
+    train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
+
+    modetrainer=ModelTrainer()
+    print(modetrainer.initiate_model_trainer(train_arr,test_arr))
             
 
