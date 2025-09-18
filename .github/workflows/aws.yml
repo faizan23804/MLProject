@@ -7,7 +7,7 @@ on:
 env:
   AWS_REGION: ap-south-1
   ECR_REPOSITORY: student-performance
-  EC2_HOST: ubuntu-13.203.72.125 
+  EC2_HOST: ubuntu@13.203.72.125 
   KEY_SECRET: EC2_SSH_KEY  # name of your GitHub secret holding your EC2 private key
 
 jobs:
